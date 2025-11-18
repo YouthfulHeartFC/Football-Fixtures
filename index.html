@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Football Fixtures</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: url('myimage.png') center center/35% no-repeat fixed, #101820;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 980px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.95);
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      padding: 32px 24px 24px 24px;
+    }
+    h1 {
+      text-align: center;
+      color: #102542;
+      margin-bottom: 2.2rem;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #f7ce46aa;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #314078;
+      background: #f7ce46dd;
+      border-radius: 12px;
+      padding: 7px 18px;
+      margin: 26px 0 16px 0;
+      text-align: center;
+      letter-spacing: 0.7px;
+      box-shadow: 0 1px 3px #eee;
+    }
+    .fixture-list {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+    .fixture-card {
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+      border-radius: 15px;
+      box-shadow: 0 1px 7px #ececec;
+      background: linear-gradient(90deg, #d9f0fc 80%, #f7ce46 100%);
+      justify-content: space-between;
+      gap: 16px;
+      min-width: 0;
+    }
+    .fixture-type {
+      align-self: flex-start;
+      background: #102542;
+      color: #fff;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 1px 3px #fafad2;
+    }
+    .teams-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-width: 285px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 80px;
+    }
+    .team img {
+      width: 58px;
+      height: 58px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #f7ce46;
+      margin-bottom: 7px;
+      background: #fff;
+      box-shadow: 0 1px 6px #bdbdbd;
+    }
+    .vs {
+      font-weight: bolder;
+      font-size: 1.35rem;
+      color: #102542;
+      opacity: 0.82;
+      min-width: 48px;
+      text-align: center;
+      padding: 0 5px;
+    }
+    .details-row {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      width: 100%;
+    }
+    .odds {
+      display: flex;
+      justify-content: space-between;
+      width: 120px;
+      background: #f7ce46;
+      border-radius: 8px;
+      padding: 5px 12px;
+      color: #102542;
+      font-weight: 600;
+      font-size: 1.10rem;
+      margin-bottom: 6px;
+    }
+    .date-time, .venue {
+      color: #222;
+      font-size: 1.00rem;
+    }
+    .venue {
+      font-style: italic;
+      opacity: 0.82;
+    }
+    .score-details {
+      margin-top: 8px;
+      display: flex;
+      gap: 28px;
+      font-size: 1.02rem;
+      color: #2a2a2a;
+      opacity: 0.83;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      letter-spacing: 0.5px;
+    }
+    .score-tag {
+      display: inline-block;
+      min-width: 90px;
+      font-weight: 600;
+      background: #e9e4b0;
+      border-radius: 8px;
+      padding: 4px 10px;
+      margin-right: 7px;
+      color: #314078;
+      font-size: 0.97rem;
+      text-align: center;
+    }
+    @media (max-width: 650px) {
+      .fixture-card {
+        gap: 12px;
+        text-align: center;
+      }
+      .teams-row {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .details-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+      }
+      .score-details {
+        flex-direction: column;
+        gap: 7px;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Football Fixtures</h1>
+
+    <!-- UPCOMING FIXTURES -->
+    <div class="section-title">Upcoming Fixtures</div>
+    <div class="fixture-list">
+      <!-- Only fixtures that have not been played (FT: -) go here -->
+      <div class="fixture-card">
+        <div class="fixture-type">Youthful Heart Challenge Cup</div>
+        <div class="teams-row">
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=BAR" alt="Barcelona">
+            <span>Barcelona</span>
+          </div>
+          <span class="vs">vs</span>
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=RMD" alt="Real Madrid">
+            <span>Real Madrid</span>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="odds">
+            <span>2.80</span>
+            <span>1.95</span>
+          </div>
+          <div>
+            <div class="date-time">Nov 23, 2025 — 21:00</div>
+            <div class="venue">Camp Nou</div>
+            <div class="score-details">
+              <span class="score-tag">HT: -</span>
+              <span class="score-tag">FT: -</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fixture-card">
+        <div class="fixture-type">Friendly Match</div>
+        <div class="teams-row">
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=ARS" alt="Arsenal">
+            <span>Arsenal</span>
+          </div>
+          <span class="vs">vs</span>
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=MUN" alt="Man United">
+            <span>Man United</span>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="odds">
+            <span>2.10</span>
+            <span>3.30</span>
+          </div>
+          <div>
+            <div class="date-time">Nov 22, 2025 — 18:30</div>
+            <div class="venue">Emirates Stadium</div>
+            <div class="score-details">
+              <span class="score-tag">HT: -</span>
+              <span class="score-tag">FT: -</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAYED FIXTURES -->
+    <div class="section-title">Played Fixtures</div>
+    <div class="fixture-list">
+      <!-- Only fixtures that have a FT value go here -->
+      <div class="fixture-card">
+        <div class="fixture-type">Super Cup</div>
+        <div class="teams-row">
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=CHE" alt="Chelsea">
+            <span>Chelsea</span>
+          </div>
+          <span class="vs">vs</span>
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=LIV" alt="Liverpool">
+            <span>Liverpool</span>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="odds">
+            <span>3.00</span>
+            <span>2.10</span>
+          </div>
+          <div>
+            <div class="date-time">Nov 25, 2025 — 16:45</div>
+            <div class="venue">Stamford Bridge</div>
+            <div class="score-details">
+              <span class="score-tag">HT: 0 - 2</span>
+              <span class="score-tag">FT: 3 - 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- (Example of another played fixture; you can copy this block as you like) -->
+      <div class="fixture-card">
+        <div class="fixture-type">Friendly Match</div>
+        <div class="teams-row">
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=ARS" alt="Arsenal">
+            <span>Arsenal</span>
+          </div>
+          <span class="vs">vs</span>
+          <div class="team">
+            <img src="https://via.placeholder.com/58?text=MUN" alt="Man United">
+            <span>Man United</span>
+          </div>
+        </div>
+        <div class="details-row">
+          <div class="odds">
+            <span>2.10</span>
+            <span>3.30</span>
+          </div>
+          <div>
+            <div class="date-time">Nov 20, 2025 — 18:30</div>
+            <div class="venue">Emirates Stadium</div>
+            <div class="score-details">
+              <span class="score-tag">HT: 1 - 0</span>
+              <span class="score-tag">FT: 2 - 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
